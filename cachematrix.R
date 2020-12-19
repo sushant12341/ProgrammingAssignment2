@@ -22,6 +22,7 @@ makeCacheMatrix <- function(x=matrix()){
 ## This Function will utilize the Cache Function for the  Inverse Data if already
 ## stored and if Inverse is null then it will utilize the functions in the above 
 ## Parent function 
+## will compute the inverse for a invertible square matrix only 
 
 cacheSolve <- function(x,...){
   m<-x$getinv()      ## check if the inverse data already present 
@@ -30,7 +31,7 @@ cacheSolve <- function(x,...){
     return(m)
     
   }
-  data<-solve(x$get()) ## in case not , then will compute for the inverse
+  data<-solve(x$get()) ## in case not , then will compute for the inverse 
   x$setinv(data)
 }
 
